@@ -1,8 +1,8 @@
 import {isPrime} from '../util/isPrime.js';
 import {Worker, isMainThread, threadId,parentPort} from 'worker_threads';
-// import { cpus } from 'os';
+import { cpus } from 'os';
 
-const numCPUs = 16;
+const numCPUs = cpus().length;
 const under = 2000000;
 let bigSum = 2;
 let counter = 0;
@@ -20,7 +20,7 @@ if (isMainThread) {
         workman.once('message', (message) => {
             bigSum += parseInt(message);
             counter++;
-            if (counter ==16){
+            if (counter ==numCPUs){
                 console.log(bigSum);
                 console.log(`It took ${(Date.now() - start) /1000} seconds to get the answer.`);
             }
