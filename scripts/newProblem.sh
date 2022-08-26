@@ -1,12 +1,12 @@
 #!/bin/bash
 
 problemName=$1
-mkdir "problems/$component"
+mkdir "problems/$problemName"
 
 # Make JS File
 echo "const start = Date.now();
 
-console.log(`\${(Date.now() - start) /1000} seconds`);" > "problems/$component/app.js"
+console.log(`\${(Date.now() - start) /1000} seconds`);" > "problems/$problemName/app.js"
 
 echo
 echo "Problem $problemName Created Successfully!"
