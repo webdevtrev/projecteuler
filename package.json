@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "pr": "npm run time && git add README.md && git commit -m 'Updates time results' && git push",
     "time": "node ./scripts/execAll.js",
     "gen": "./scripts/newProblem.sh"
   },
